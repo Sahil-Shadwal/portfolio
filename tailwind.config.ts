@@ -8,13 +8,12 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors:{
+      colors: {
         black: {
-          DEFAULT: '#000',
-          100: '#000319', 
+          DEFAULT: "#000",
+          100: "#000319",
         },
-        }
-      }
+      },
     },
   },
   plugins: [],
