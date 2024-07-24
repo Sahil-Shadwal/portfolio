@@ -1,5 +1,6 @@
 import React from "react";
 import { Spotlight } from "./ui/Spotlight";
+import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
       </div>
       <div
         className="h-screen w-full dark:bg-black-100 bg-white 
-       dark:bg-grid-small-white/[0.03] bg-grid-small-black/[0.2] absolute 
+       dark:bg-dot-white/[0.19] bg-dot-black/[0.2] absolute 
        flex items-center justify-center top-0 left-0"
       >
         <div
@@ -31,6 +32,13 @@ const Hero = () => {
           <h2 className="uppercase tracking-widest text-xs text-center text-blue-100 max-x-80">
             random text is fandom
           </h2>
+          <TextGenerateEffect
+            className="text-center text-[40px] md:text-5xl lg:text-6xl"
+            words="Transforming Concepts into Seamless Experience"
+          />
+          <p className="text-center md:tracking-wider mv-4 text-sm md:text-lg lg:text-2xl">
+            Hii, I&apos;m Sahil Shadwal, a Full-Stack Developer based in India.
+          </p>
         </div>
       </div>
     </div>
