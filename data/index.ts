@@ -1,14 +1,14 @@
 export const navItems = [
   { name: "About", link: "#about" },
   { name: "Projects", link: "#projects" },
-  { name: "Testimonials", link: "#testimonials" },
+  { name: "Blog", link: "#blog" },
   { name: "Contact", link: "#contact" },
 ];
 
 export const gridItems = [
   {
     id: 1,
-    title: "I prioritize client collaboration, fostering open communication ",
+    title: "I spin elegant code and thrive in open-source projects. ",
     description: "",
     className: "lg:col-span-3 md:col-span-6 md:row-span-4 lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
@@ -18,7 +18,7 @@ export const gridItems = [
   },
   {
     id: 2,
-    title: "Experienced in building robust server-side applications",
+    title: "Building server-side apps as robust as the globe itself.",
     description: "",
     className: "lg:col-span-2 md:col-span-3 md:row-span-2",
     imgClassName: "",
@@ -110,7 +110,7 @@ export const projects = [
   },
 ];
 
-export const testimonials = [
+export const blog = [
   {
     quote:
       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
@@ -146,36 +146,97 @@ export const testimonials = [
 export const companies = [
   {
     id: 1,
-    name: "cloudinary",
-    img: "/cloud.svg",
-    nameImg: "/cloudName.svg",
+    name: "Prisma",
+    img: "/prisma.svg",
+    nameImg: "/prisma.svg",
   },
   {
     id: 2,
-    name: "appwrite",
-    img: "/app.svg",
-    nameImg: "/appName.svg",
+    name: "Python",
+    img: "/python.svg",
+    nameImg: "/python.svg",
   },
   {
     id: 3,
-    name: "HOSTINGER",
-    img: "/host.svg",
-    nameImg: "/hostName.svg",
+    name: "Express Js",
+    img: "/express.svg",
+    nameImg: "/express.svg",
   },
   {
     id: 4,
-    name: "stream",
-    img: "/s.svg",
-    nameImg: "/streamName.svg",
+    name: "Node Js",
+    img: "/nodejs.svg",
+    nameImg: "/nodejs.svg",
   },
   {
     id: 5,
-    name: "docker.",
+    name: "docker",
     img: "/dock.svg",
     nameImg: "/dockerName.svg",
   },
+  {
+    id: 6,
+    name: "Solidity",
+    img: "/solidity.svg",
+    nameImg: "/solidity.svg",
+  },
+  {
+    id: 7,
+    name: "AWS Lambda",
+    img: "/aws-lambda.svg",
+    nameImg: "/aws-lambda.svg",
+  },
 ];
-
+export const techstack = [
+  {
+    id: 1,
+    name: "AWS",
+    img: "/aws.svg",
+    nameImg: "/aws.svg",
+  },
+  {
+    id: 2,
+    name: "Azure",
+    img: "/azure.svg",
+    nameImg: "/azure.svg",
+  },
+  {
+    id: 3,
+    name: "Kubernetes",
+    img: "/kubernetes.svg",
+    nameImg: "/kubernetes.svg",
+  },
+  {
+    id: 4,
+    name: "Figma",
+    img: "/figma.svg",
+    nameImg: "/figma.svg",
+  },
+  {
+    id: 5,
+    name: "Java",
+    img: "/java.svg",
+    nameImg: "/java.svg",
+  },
+  {
+    id: 6,
+    name: "MongoDB",
+    img: "/mongodb.svg",
+    nameImg: "/mongodb.svg",
+  },
+  {
+    id: 7,
+    name: "Postgres",
+    img: "/postgresql.svg",
+    nameImg: "/postgresql.svg",
+  },
+  {
+    id: 8,
+    name: "Hardhat",
+    img: "/Hardhat.svg",
+    nameImg: "/Hardhat.svg",
+  },
+];
 export const workExperience = [
   {
     id: 1,
@@ -186,22 +247,22 @@ export const workExperience = [
   },
   {
     id: 2,
-    title: "Mobile App Dev - JSM Tech",
-    desc: "Designed and developed mobile app for both iOS & Android platforms using React Native.",
+    title: "Open Source Contributor",
+    desc: "Contributed to open-source projects, including JSON Schema & Workbench.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp2.svg",
   },
   {
     id: 3,
-    title: "Freelance App Dev Project",
-    desc: "Led the dev of a mobile app for a client, from initial concept to deployment on app stores.",
+    title: "Freelance Backend Dev Project",
+    desc: "Created a web app for a client, from initial concept to deployment on Cloudflare workers.",
     className: "md:col-span-2", // change to md:col-span-2
     thumbnail: "/exp3.svg",
   },
   {
     id: 4,
-    title: "Lead Frontend Developer",
-    desc: "Developed and maintained user-facing features using modern frontend technologies.",
+    title: "Tech Head - Malang ",
+    desc: "Maintaining user-facing features using modern frontend technologies.",
     className: "md:col-span-2",
     thumbnail: "/exp4.svg",
   },
@@ -211,13 +272,21 @@ export const socialMedia = [
   {
     id: 1,
     img: "/git.svg",
+    link: "https://github.com/Sahil-Shadwal",
   },
   {
     id: 2,
     img: "/twit.svg",
+    link: "https://x.com/sahil_shadwal?t=rdp6UiTTq4PN3JkJourFpg&s=09",
   },
   {
     id: 3,
     img: "/link.svg",
+    link: "https://www.linkedin.com/in/sahil-shadwal-3821bb245/",
+  },
+  {
+    id: 4,
+    img: "https://upload.wikimedia.org/wikipedia/commons/a/ab/LeetCode_logo_white_no_text.svg",
+    link: "https://leetcode.com/u/sahilshadwal/",
   },
 ];
