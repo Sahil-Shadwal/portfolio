@@ -20,14 +20,14 @@ const Experience = () => {
             style={{
               //   add these two
               //   you can generate the color from here https://cssgradient.io/
-              background: "rgb(4,7,29)",
+              background: "rgba(255, 255, 255,0.2)",
               backgroundColor:
-                "linear-gradient(90deg, rgba(4,7,29,1) 0%, rgba(12,14,35,1) 100%)",
+                "radial-gradient(circle, rgba(46 16 101,1) 0%, rgba(215,102,190,1) 100%)",
               // add this border radius to make it more rounded so that the moving border is more realistic
               borderRadius: `calc(1.75rem* 0.96)`,
             }}
             // remove bg-white dark:bg-slate-900
-            className="flex-1 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+            className="flex-1 text-#000000 dark:text-white border-neutral-200 dark:border-slate-400"
           >
             <div className="flex lg:flex-row flex-col lg:items-center p-3 py-6 md:p-5 lg:p-10 gap-2">
               <img
