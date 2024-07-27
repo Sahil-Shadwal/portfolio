@@ -3,7 +3,8 @@ import { Spotlight } from "./ui/Spotlight";
 import { TextGenerateEffect } from "./ui/TextGenerateEffect";
 import MagicButton from "./ui/MagicButton";
 import { FaLocationArrow } from "react-icons/fa";
-import { dancingScript } from "../app/layout";
+import { Dancing_Script } from "next/font/google";
+const dancingScript = Dancing_Script({ weight: "400", subsets: ["latin"] });
 const Hero = () => {
   return (
     <div className="pb-20 pt-30">
