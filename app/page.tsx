@@ -6,7 +6,7 @@ import Hero from "@/components/Hero";
 import RecentProjects from "@/components/RecentProjects";
 import { FloatingNav } from "@/components/ui/FloatingNav";
 import { navItems } from "@/data";
-import Terrain from "@/Components/background/background";
+import Terrain from "@/Components/background/background.js";
 
 export default function Home() {
   return (
