@@ -25,7 +25,7 @@ const Footer = () => {
           Reach out to me today and let&apos;s discuss how I can elevate your
           project to new heights.
         </p>
-        <a href="mailto:sahilshadwal@gmail.com">
+        <a href="mailto:sahilshadwal@gmail.com?subject=Inquiry%20from%20Portfolio%20Site&body=Hello%20Sahil,%0A%0AI%20visited%20your%20portfolio%20site%20at%20https://shadwal.site%20and%20was%20impressed%20by%20your%20work.%20I%20would%20like%20to%20discuss%20potential%20collaboration%20opportunities.%0A%0A%20Best%20regards,%0A%20[Your%20Name]">
           <MagicButton
             title="Let's get in touch"
             icon={<FaLocationArrow />}
