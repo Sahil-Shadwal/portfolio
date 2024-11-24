@@ -10,13 +10,15 @@ import { navItems } from "@/data";
 import Image from "next/image";
 import { FaHome } from "react-icons/fa";
 import { FaH } from "react-icons/fa6";
+import Terrain from "../Components/background/background";
 
 export default function Home() {
   return (
     <div className="relative">
       {/* Background Animation Container */}
       <div className="fixed inset-0 z-0">
-        <BackgroundGradientAnimation />
+        <Terrain />
+        {/* <BackgroundGradientAnimation /> */}
       </div>
 
       {/* Content Container */}
