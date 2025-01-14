@@ -2,15 +2,111 @@
 import { cn } from "@/lib/utils";
 import { useEffect, useRef, useState } from "react";
 
+const themes = {
+  moonlight: {
+    gradientBackgroundStart: "rgb(30, 41, 59)",
+    gradientBackgroundEnd: "rgb(17, 24, 39)",
+    firstColor: "147, 197, 253",
+    secondColor: "196, 181, 253",
+    thirdColor: "167, 139, 250",
+    fourthColor: "139, 92, 246",
+    fifthColor: "129, 140, 248",
+    pointerColor: "147, 197, 253",
+  },
+  dawn: {
+    gradientBackgroundStart: "rgb(249, 250, 251)",
+    gradientBackgroundEnd: "rgb(243, 244, 246)",
+    firstColor: "254, 202, 202",
+    secondColor: "252, 165, 165",
+    thirdColor: "254, 240, 138",
+    fourthColor: "253, 186, 116",
+    fifthColor: "253, 164, 175",
+    pointerColor: "251, 207, 232",
+  },
+  sage: {
+    gradientBackgroundStart: "rgb(236, 253, 245)",
+    gradientBackgroundEnd: "rgb(209, 250, 229)",
+    firstColor: "167, 243, 208",
+    secondColor: "110, 231, 183",
+    thirdColor: "52, 211, 153",
+    fourthColor: "16, 185, 129",
+    fifthColor: "6, 148, 102",
+    pointerColor: "167, 243, 208",
+  },
+  ocean: {
+    gradientBackgroundStart: "rgb(238, 242, 255)",
+    gradientBackgroundEnd: "rgb(224, 231, 255)",
+    firstColor: "199, 210, 254",
+    secondColor: "165, 180, 252",
+    thirdColor: "129, 140, 248",
+    fourthColor: "99, 102, 241",
+    fifthColor: "79, 70, 229",
+    pointerColor: "165, 180, 252",
+  },
+  lavender: {
+    gradientBackgroundStart: "rgb(245, 243, 255)",
+    gradientBackgroundEnd: "rgb(237, 233, 254)",
+    firstColor: "221, 214, 254",
+    secondColor: "196, 181, 253",
+    thirdColor: "167, 139, 250",
+    fourthColor: "139, 92, 246",
+    fifthColor: "124, 58, 237",
+    pointerColor: "196, 181, 253",
+  },
+  sunset: {
+    gradientBackgroundStart: "rgb(255, 241, 235)",
+    gradientBackgroundEnd: "rgb(254, 228, 226)",
+    firstColor: "254, 215, 170",
+    secondColor: "253, 186, 116",
+    thirdColor: "251, 146, 60",
+    fourthColor: "249, 115, 22",
+    fifthColor: "234, 88, 12",
+    pointerColor: "254, 215, 170",
+  },
+  mint: {
+    gradientBackgroundStart: "rgb(236, 254, 255)",
+    gradientBackgroundEnd: "rgb(207, 250, 254)",
+    firstColor: "165, 243, 252",
+    secondColor: "103, 232, 249",
+    thirdColor: "34, 211, 238",
+    fourthColor: "6, 182, 212",
+    fifthColor: "8, 145, 178",
+    pointerColor: "165, 243, 252",
+  },
+  rose: {
+    gradientBackgroundStart: "rgb(255, 241, 242)",
+    gradientBackgroundEnd: "rgb(254, 228, 226)",
+    firstColor: "253, 164, 175",
+    secondColor: "251, 113, 133",
+    thirdColor: "244, 63, 94",
+    fourthColor: "225, 29, 72",
+    fifthColor: "225, 29, 72",
+    pointerColor: "251, 113, 133",
+  },
+  serenity: {
+    gradientBackgroundStart: "rgb(240, 249, 255)",
+    gradientBackgroundEnd: "rgb(224, 242, 254)",
+    firstColor: "186, 230, 253",
+    secondColor: "125, 211, 252",
+    thirdColor: "56, 189, 248",
+    fourthColor: "14, 165, 233",
+    fifthColor: "2, 132, 199",
+    pointerColor: "125, 211, 252",
+  },
+  pearl: {
+    gradientBackgroundStart: "rgb(250, 250, 250)",
+    gradientBackgroundEnd: "rgb(244, 244, 245)",
+    firstColor: "228, 228, 231",
+    secondColor: "212, 212, 216",
+    thirdColor: "161, 161, 170",
+    fourthColor: "113, 113, 122",
+    fifthColor: "82, 82, 91",
+    pointerColor: "212, 212, 216",
+  },
+};
+
 export const BackgroundGradientAnimation = ({
-  gradientBackgroundStart = "rgb(108, 0, 162)",
-  gradientBackgroundEnd = "rgb(0, 17, 82)",
-  firstColor = "18, 113, 255",
-  secondColor = "221, 74, 255",
-  thirdColor = "100, 220, 255",
-  fourthColor = "200, 50, 50",
-  fifthColor = "180, 180, 50",
-  pointerColor = "140, 100, 255",
+  theme = "moonlight", // dawn, sage , ocean , lavender , sunset , mint , rose , serenity , pearl
   size = "80%",
   blendingValue = "hard-light",
   children,
@@ -18,14 +114,7 @@ export const BackgroundGradientAnimation = ({
   interactive = true,
   containerClassName,
 }: {
-  gradientBackgroundStart?: string;
-  gradientBackgroundEnd?: string;
-  firstColor?: string;
-  secondColor?: string;
-  thirdColor?: string;
-  fourthColor?: string;
-  fifthColor?: string;
-  pointerColor?: string;
+  theme?: keyof typeof themes;
   size?: string;
   blendingValue?: string;
   children?: React.ReactNode;
@@ -33,30 +122,41 @@ export const BackgroundGradientAnimation = ({
   interactive?: boolean;
   containerClassName?: string;
 }) => {
+  const selectedTheme = themes[theme];
   const interactiveRef = useRef<HTMLDivElement>(null);
 
   const [curX, setCurX] = useState(0);
   const [curY, setCurY] = useState(0);
   const [tgX, setTgX] = useState(0);
   const [tgY, setTgY] = useState(0);
+
   useEffect(() => {
     document.body.style.setProperty(
       "--gradient-background-start",
-      gradientBackgroundStart
+      selectedTheme.gradientBackgroundStart
     );
     document.body.style.setProperty(
       "--gradient-background-end",
-      gradientBackgroundEnd
+      selectedTheme.gradientBackgroundEnd
     );
-    document.body.style.setProperty("--first-color", firstColor);
-    document.body.style.setProperty("--second-color", secondColor);
-    document.body.style.setProperty("--third-color", thirdColor);
-    document.body.style.setProperty("--fourth-color", fourthColor);
-    document.body.style.setProperty("--fifth-color", fifthColor);
-    document.body.style.setProperty("--pointer-color", pointerColor);
+    document.body.style.setProperty("--first-color", selectedTheme.firstColor);
+    document.body.style.setProperty(
+      "--second-color",
+      selectedTheme.secondColor
+    );
+    document.body.style.setProperty("--third-color", selectedTheme.thirdColor);
+    document.body.style.setProperty(
+      "--fourth-color",
+      selectedTheme.fourthColor
+    );
+    document.body.style.setProperty("--fifth-color", selectedTheme.fifthColor);
+    document.body.style.setProperty(
+      "--pointer-color",
+      selectedTheme.pointerColor
+    );
     document.body.style.setProperty("--size", size);
     document.body.style.setProperty("--blending-value", blendingValue);
-  }, []);
+  }, [selectedTheme, size, blendingValue]);
 
   useEffect(() => {
     function move() {
